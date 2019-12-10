@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-list',
@@ -9,14 +10,9 @@ import { HttpService } from '../http.service';
 
 export class ListComponent implements OnInit {
 
-  brews: Object;
+    types = [ "Meat", "Fish", "Bread", "Pasta"]
+    ngOnInit(){
 
-  constructor(private _http: HttpService) { }
-
-  ngOnInit() {
-    this._http.getBeer().subscribe(data => {
-      this.brews=data;
-      console.log(this.brews);
-    });
+    }
   }
-}
+

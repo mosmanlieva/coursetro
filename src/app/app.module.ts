@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { BascketComponent } from './bascket/bascket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    BascketComponent
   ],
   imports: [
     BrowserModule,

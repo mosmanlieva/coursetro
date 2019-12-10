@@ -1,10 +1,18 @@
+<header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a *ngFor="let type of types">
+            <a href="tab_{{type}}"></a>{{type}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<h1>Breweries</h1>
+  <div *ngFor="let type of types">
+    <a id="tab_{{type}}"></a>
+    <h2>{{type}}</h2>
+    <hr>
+  </div>
 
-<ul *ngIf="brews">
-  <li *ngFor="let brew of brews">
-    <p class="name">{{ brew.name }}</p>
-    <p class="country">{{ brew.country }}</p>
-    <a class="site" href="{{ brew.website_url }}">site</a>
-  </li>
-</ul>
+
