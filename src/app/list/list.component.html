@@ -9,10 +9,27 @@
     </div>
   </header>
 
-  <div *ngFor="let type of types">
-    <a id="tab_{{type}}"></a>
+<a *ngFor="let type of types">
+  <a id="tab_{{type}}"></a>
     <h2>{{type}}</h2>
+    
     <hr>
-  </div>
+    <nav>
+      <ul>
+      <a *ngFor="let product of products">
+        <a *ngIf="product.type==type">
+          <a class="container2">
+          <a class="quantity">
+            <img src={{product.picture}} height="220" width="300">
+            <div class="bottom-left">{{product.price}} $</div>
+            <div class="top-right">{{product.description}}</div>
+            <div class="bottom-right"><span (click)="quantityDecrease(product.name)">-</span> {{product.quantity}}
+            <span (click)="quantityIncrease(product.name)">+</span></div></a>
+        </a>
+        </a>
+      </a>
+    </ul>
+    </nav>
+  </a>
 
 

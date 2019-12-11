@@ -8,13 +8,14 @@ import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { BascketComponent } from './bascket/bascket.component';
+import { ProductsService } from './products.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListComponent,
-    BascketComponent
+    BascketComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,9 @@ import { BascketComponent } from './bascket/bascket.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    ProductsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

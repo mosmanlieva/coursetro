@@ -40,3 +40,46 @@ header {
 hr{
     border-block-color: black;
 }
+
+.gallery {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 200em;
+}
+
+ 
+.container2 {
+    position: relative;
+    color: white;
+    display: inline-block;
+    padding-left: 2em;
+    padding-top: 2em;
+    
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 2em;
+    padding-left: 1.5em;
+    background-color: black ;
+    opacity: 0.8;
+  }
+
+  .top-right {
+    position: absolute;
+    top: 2.1em;
+    background-color: black;
+    opacity: 0.8;
+  }
+
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 0em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    background-color: black ;
+    opacity: 0.8;
+  }
