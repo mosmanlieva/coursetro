@@ -2,8 +2,12 @@ $primary: rgb(149, 187, 122);
 
 header {
     background: rgb(149, 187, 122, 0.8);
-
-    padding: 1em 0;
+    overflow: hidden;
+    background-color: darken ($primary, 15%);
+    position: fixed; /* Set the navbar to fixed position */
+    width: 80%; /* Full width */
+    z-index:1;
+    font-size: 1.5em;
 
     a {
         color: #1D344E;
@@ -37,16 +41,57 @@ header {
     }
 }
 
+.sidenav {
+    height: 100%; 
+    width: 160px; 
+    position: fixed; 
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: $primary;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+p{
+    padding: 3em;
+}
+
 hr{
     border-block-color: black;
 }
 
 .gallery {
+    
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 5vw);
     grid-gap: 200em;
 }
-
  
 .container2 {
     position: relative;
@@ -82,4 +127,5 @@ hr{
     padding-right: 0.5em;
     background-color: black ;
     opacity: 0.8;
+    cursor: pointer;
   }

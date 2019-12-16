@@ -1,3 +1,6 @@
+
+$primary: rgb(149, 187, 122);
+
 .container2 {
     position: relative;
     color: white;
@@ -33,3 +36,56 @@
     background-color: black ;
     opacity: 0.8;
   }
+
+
+
+  div.container{
+   
+      background: rgb(168, 209, 138, 0.8);
+      font-weight: bold;
+      font-size: 1.2em;
+      
+  }
+
+  button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+.bottom{
+  position: relative;
+  position: fixed;
+  color: darken($primary, 10%);
+  padding: 1em;
+  bottom: 1.5em;
+  right: 1.5em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  font-size: 0.8em;
+  background-color:  rgb(0,0,0,0.7);
+  &:hover {
+    background: darken(black, 10%);
+    background-size: auto;
+  }
+}
+
+
+.back {
+  color: darken($primary, 10%);
+  cursor: pointer;
+  padding: 1.5em;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: rgb(0,0,0,0.7);
+  &:hover {
+    background: darken(black, 10%);
+    background-size: auto;
+  }
+}

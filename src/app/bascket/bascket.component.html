@@ -1,14 +1,23 @@
-<nav>
-    <ul>
-    <a *ngFor="let product of products">
-        <a *ngIf="product.quantity>0">
-        <a class="container2">
-        <img src={{product.picture}} height="220" width="300">
-            <div class="bottom-left">{{product.price}} $</div>
-            <div class="top-right">{{product.description}}</div>
-            <div class="bottom-right"><span (click)="quantityDecrease(product.name)">-</span> {{product.quantity}}
-              <span (click)="quantityIncrease(product.name)">+</span></div></a>
+      
+    <nav>
+        <ul>
+        <a *ngFor="let product of products">
+            <a *ngIf="product.quantity>0">
+            <a class="container2">
+            <img src={{product.picture}} height="220" width="300">
+                <div class="bottom-left">{{product.price}} $</div>
+                <div class="top-right">{{product.description}}</div>
+                <div class="bottom-right"><span (click)="quantityDecrease(product.name)">-</span> {{product.quantity}}
+                  <span (click)="quantityIncrease(product.name)">+</span></div></a>
+            </a>
         </a>
-    </a>
-    </ul>
-</nav>
+        <h1 class="container">
+                <div class="bottom" *ngIf="countBill()!=0">Your bill is {{pay}} $<p></p>
+                    <button (click)="payNow()">Pay now!</button>
+                </div>
+                </h1>
+                <div class="back" *ngIf="countBill()==0" href="#" routerLink="/list" text-align: center>Please go to <u>GROCERY</u> to pick your products first.</div>
+        </ul>
+    
+    </nav>
+    

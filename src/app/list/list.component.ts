@@ -11,10 +11,15 @@ import { ProductsService, Product } from '../products.service';
 
 export class ListComponent implements OnInit {
 
+
     products: Product[];
-    types = [ "Meat", "Fish", "Bread", "Pasta"];
+    types = [ "Meat", "Fish", "Bread", "Pasta", "Milk products"];
 
 
+    constructor(private productSrv: ProductsService){
+
+    }
+    
     quantityIncrease(name: string){
       for(let product of this.products){
         if(product.name==name){
@@ -31,9 +36,6 @@ export class ListComponent implements OnInit {
       }
     }
 
-    constructor(private productSrv: ProductsService){
-
-    }
     
     ngOnInit(){
       this.products = this.productSrv.getProducts();
