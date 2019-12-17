@@ -1,12 +1,29 @@
 
-<h1>Welcome {{name}} !</h1>
+<h1>Welcome to our online store<a *ngIf="!getTemp()">, {{name}}</a>!</h1>
 
 <div class="play-container" *ngIf="getTemp()">
-    
+        
+    <p>Please enter username and password:</p>
     <a>Username: <input type="string" [(ngModel)]="name"><br></a>
-    <a>Password: <input type="string" [(ngModel)]="pass"><br></a>
-    <span (click)=isUser(name,pass)> Log in!</span> 
-    <span (click)=newUser(name,pass)> New Registration</span>
+    <a>Password: <input type="string" [(ngModel)]="pass"><br></a><p></p>
+    <span (click)=logIn(name,pass)> Log in!</span>
+    <span (click)=newUser(name,pass) style="left:50px;"> New Registration</span>
     
+</div>
+
+
+<div class="search" *ngIf="!getTemp()" >
+    <h2>Search for products: </h2>
+    <a>Product: <input type="string" [(ngModel)]="product"><br></a>
+    <a class="cont" *ngFor="let p of products"> 
+        <a *ngIf="p.name.toLowerCase() == product.toLowerCase() ||
+                    p.type.toLowerCase() == product.toLowerCase()">
+            <a href="#" routerLink="/list" class="container">
+                <img src={{p.picture}} height="220" width="300">
+                    <div class="bottom-left">{{p.price}} $</div>
+                    <div class="top-right">{{p.description}}</div>
+            </a>
+        </a>
+    </a>
 </div>
 
